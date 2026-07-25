@@ -1,6 +1,20 @@
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=PRICEPULSE&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=32&desc=Track%20Amazon%20%26%20eBay%20prices%2C%20get%20alerted%20the%20moment%20they%20drop&descAlignY=55&descSize=14"/>
+
+[![Live Demo](https://img.shields.io/badge/▶_Live_Demo-Visit_Now-6366f1?style=for-the-badge&logoColor=white)](https://pricepulse-swart.vercel.app)
+[![GitHub Stars](https://img.shields.io/github/stars/trinathone/pricepulse?style=for-the-badge&color=f59e0b)](https://github.com/trinathone/pricepulse)
+[![License](https://img.shields.io/badge/license-MIT-22c55e?style=for-the-badge)](LICENSE)
+
+</div>
+
+---
+
 # PricePulse
 
 A simple price tracking API that monitors product prices on Amazon and eBay, stores price history in a database, and alerts you when prices drop below your target.
+
+> The live demo above is a static preview page. Run locally (below) for the full API + background scraper.
 
 ## What It Does
 
