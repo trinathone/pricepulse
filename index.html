@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PricePulse — price drop tracker demo</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 760px; margin: 60px auto; padding: 0 20px; line-height: 1.5; }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  .sub { opacity: .7; margin-bottom: 32px; }
+  table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid rgba(128,128,128,.25); font-size: .92rem; }
+  th { opacity: .6; font-weight: 600; text-transform: uppercase; font-size: .72rem; letter-spacing: .04em; }
+  .drop { color: #22c55e; font-weight: 600; }
+  .flat { opacity: .6; }
+  code { background: rgba(128,128,128,.15); padding: 2px 6px; border-radius: 4px; font-size: .85rem; }
+  .badge { display: inline-block; background: #f59e0b; color: #111; font-size: .7rem; font-weight: 700; padding: 3px 8px; border-radius: 5px; letter-spacing: .03em; }
+  footer { margin-top: 48px; opacity: .55; font-size: .85rem; }
+  a { color: #6366f1; }
+</style>
+</head>
+<body>
+<span class="badge">DEMO — STATIC PREVIEW</span>
+<h1>PricePulse</h1>
+<p class="sub">Track product prices, get alerted the moment they drop below your target.</p>
+
+<p>PricePulse watches Amazon/eBay listings on a schedule, records every price it sees, and fires an alert
+when a product crosses your target price. This page is a static preview of the tracker UI — the full app
+is a FastAPI service with a live scraper, SQLite history, and a REST API (see the
+<a href="https://github.com/trinathone/pricepulse">source + full README</a> for the real API, run locally
+with <code>python main.py</code>).</p>
+
+<table>
+  <thead><tr><th>Product</th><th>Target</th><th>Current</th><th>Change</th></tr></thead>
+  <tbody>
+    <tr><td>iPhone 15, 128GB</td><td>$699</td><td>$684</td><td class="drop">▼ 2.1%</td></tr>
+    <tr><td>Sony WH-1000XM5</td><td>$300</td><td>$328</td><td class="flat">—</td></tr>
+    <tr><td>Dyson V15 Detect</td><td>$500</td><td>$479</td><td class="drop">▼ 4.2%</td></tr>
+  </tbody>
+</table>
+
+<p>Example alert payload:</p>
+<pre><code>POST /scrape-now
+{ "product_id": 1, "price": 684.00, "target_price": 699, "alert": true }</code></pre>
+
+<footer>Built by <a href="https://github.com/trinathone">Neo (Trinath)</a> · AI/ML Engineer</footer>
+</body>
+</html>
